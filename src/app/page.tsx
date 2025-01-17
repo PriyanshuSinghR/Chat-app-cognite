@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { io, Socket } from "socket.io-client";
 
-const socket: Socket = io("http://localhost:3001");
+const socket: Socket = io(process.env.NEXT_PUBLIC_SOCKET_URL);
 
 export default function Home() {
   const [userId, setUserId] = useState<string>("");

@@ -7,7 +7,7 @@ import { Message } from "@/types/chat";
 import { UserList } from "@/components/Sidebar/UserList";
 import { ChatWindow } from "@/components/Chat/ChatWindow";
 
-const socket: Socket = io("http://localhost:3001");
+const socket: Socket = io(process.env.NEXT_PUBLIC_SOCKET_URL);
 
 export default function Chat() {
   const searchParams = useSearchParams();
