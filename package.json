@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:socket": "NODE_PATH=. tsx --tsconfig tsconfig.server.json socket-server.mts",
     "build": "next build",
-    "build:socket": "next build && tsc --project tsconfig.server.json",
+    "build:socket": "next build && tsc --project tsconfig.server.json && tsc-alias -p tsconfig.server.json",
+    "dev": "next dev",
+    "dev:socket": "NODE_PATH=. tsx --tsconfig tsconfig.server.json src/socket-server.mts",
     "start": "next start",
-    "start:socket": "NODE_ENV=production node dist/server.mjs",
+    "start:socket": "NODE_ENV=production node dist/socket-server.mjs",
     "lint": "next lint"
   },
   "dependencies": {
@@ -35,6 +35,8 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
+    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   }

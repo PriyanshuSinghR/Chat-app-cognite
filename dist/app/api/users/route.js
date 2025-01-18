@@ -1,7 +1,6 @@
-// app/api/users/route.ts
 import { NextResponse } from "next/server";
-import User from "@/models/User";
-import db from "@/lib/db";
+import User from "../../../models/User";
+import db from "../../../lib/db";
 export async function GET() {
     try {
         await db();

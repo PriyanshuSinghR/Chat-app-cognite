@@ -3,7 +3,7 @@ import http from "http";
 import { Server } from "socket.io";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import Message from "./src/models/Message";
+import Message from "./models/Message.js";
 
 dotenv.config({ path: ".env.local" });
 
@@ -41,7 +41,7 @@ io.on("connection", (socket) => {
       message,
       timestamp: new Date(),
     });
-    console.log("dome sent");
+    console.log("Message sent");
   });
 
   socket.on("fetchChatHistory", async (data) => {
@@ -57,7 +57,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    console.log("User disconnected");
   });
 });
 

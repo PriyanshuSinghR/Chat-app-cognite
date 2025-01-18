@@ -3,7 +3,7 @@
     "target": "ES2020",
     "module": "ESNext",
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./src",
     "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["socket-server.mts", "src/**/*.ts"],
+  "include": ["src/socket-server.mts", "src/**/*.ts"],
   "exclude": ["node_modules"]
 }
